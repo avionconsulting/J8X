@@ -1,0 +1,16 @@
+(Step 1)
+Open a terminal session with root previlages
+  service confluence stop
+  service mysql stop
+
+(Step 2)
+Open a FTP session to the server
+  Delete  ib_logfile* from /var/lib/mysql
+  Edit my.cnf from /etc/mysql
+    Add max_allowed_packet = 512M
+    Add innodb_log_file_size = 256M
+
+(Step 3)
+  service mysql start
+  service confluence start  
+  
